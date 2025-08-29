@@ -128,10 +128,26 @@ Claude: [Calls continue_debate with continue_2_rounds...]
 - Real-time cost tracking by model and round
 - Token usage monitoring
 
-Current pricing (per 1K tokens):
+Default models and pricing (per 1K tokens):
 - GPT-4o: $0.005 input, $0.015 output
-- Gemini 2.0 Flash: $0.0001 input, $0.0003 output  
-- Claude 3 Sonnet: $0.003 input, $0.015 output
+- Gemini 2.5 Pro: $3.50 input, $10.50 output  
+- Claude Sonnet 4: $0.003 input, $0.015 output
+
+### Upgrading to Premium Models
+
+To use the most advanced (but expensive) models, edit `src/ai-clients.ts`:
+
+**OpenAI GPT-5:**
+```typescript
+private defaultModel = 'gpt-5';  // $1.25 input, $10.00 output per 1K tokens
+```
+
+**Claude Opus 4:**
+```typescript  
+private defaultModel = 'claude-opus-4-1-20250805';  // $15.00 input, $75.00 output per 1K tokens
+```
+
+⚠️ **Warning**: These premium models cost 250x-5000x more than the defaults!
 
 ## Architecture
 

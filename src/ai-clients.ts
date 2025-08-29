@@ -5,7 +5,7 @@ import { AIClient, AIResponse } from './types.js';
 
 export class OpenAIClient implements AIClient {
   private client: OpenAI;
-  private defaultModel = 'gpt-5';
+  private defaultModel = 'gpt-4o';
 
   constructor(apiKey: string) {
     this.client = new OpenAI({ apiKey });
@@ -184,7 +184,7 @@ export class GeminiClient implements AIClient {
 
 export class AnthropicClient implements AIClient {
   private client: Anthropic;
-  private defaultModel = 'claude-opus-4-1-20250805';
+  private defaultModel = 'claude-sonnet-4-20250514';
 
   constructor(apiKey: string) {
     this.client = new Anthropic({ apiKey });
