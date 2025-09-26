@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "build/index.js",
   "bin": {
-    "phone-friend-mcp": "build/index.js"
+    "phone-friend-mcp": "build/index.js",
+    "phone-friend-mcp-v2": "build/index.js"
   },
   "files": [
     "build/**/*",
