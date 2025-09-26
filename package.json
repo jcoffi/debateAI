@@ -1,7 +1,15 @@
 {
   "name": "phone-friend-mcp-v2",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "build/index.js",
+  "bin": {
+    "phone-friend-mcp": "build/index.js"
+  },
+  "files": [
+    "build/**/*",
+    "README.md",
+    "package.json"
+  ],
   "scripts": {
     "build": "tsc && copyfiles -f src/smart_consensus.py build",
     "dev": "tsc --watch",
@@ -9,13 +17,20 @@
     "web-server": "tsc && node build/web-server.js",
     "web-dev": "cd frontend && npm run dev",
     "clean": "rimraf build",
+    "prepublishOnly": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "keywords": [
+    "mcp",
+    "ai",
+    "debate",
+    "consensus",
+    "claude"
+  ],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
-  "description": "",
+  "description": "Phone-a-Friend MCP v2 - AI Consensus Panel for complex questions",
   "dependencies": {
     "@anthropic-ai/sdk": "^0.60.0",
     "@google/generative-ai": "^0.24.1",
@@ -30,6 +45,7 @@
     "@types/express": "^5.0.0",
     "@types/node": "^24.3.0",
     "copyfiles": "^2.4.1",
+    "rimraf": "^6.1.2",
     "typescript": "^5.9.2"
   }
 }
